@@ -1,0 +1,30 @@
+<html ng-app= "todoModule">
+<title>Todo App using Angular</title>
+<head> <h1>TODO app </h1>
+<script src="angular.min.js"></script>
+<script src ="todo.js" ></script>
+</head>
+<body>
+ <div ng-controller = "todoCtrl as ctrl">
+<p>Add a todo: </p>
+<p>
+    <input type="text" ng-model="ctrl.todoItem" />
+</p>
+<p>
+    <button ng-click = "ctrl.addTodos()">Add</button>
+</p>
+<p>Your Todos: </p>
+<p><button ng-hide ="ctrl.editBoolean"  ng-click = "ctrl.editTodos()">Edit</buttosn></p>
+<p><button ng-show = "ctrl.editBoolean" ng-click = "ctrl.editTodos()">Done</button></p>
+
+
+<ol><li ng-repeat ="i in ctrl.items track by $index">
+    <span ng-hide ="ctrl.editBoolean" ng-bind ="i"></span> 
+    <input ng-show = "ctrl.editBoolean" type="text" ng-model=i></input>
+    <button ng-hide = "ctrl.editBoolean" ng-click = "ctrl.deleteButton(i)" >Delete</button>
+</li> </ol>
+ </div>
+
+
+</body>
+</html>
