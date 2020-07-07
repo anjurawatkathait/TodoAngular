@@ -21,7 +21,7 @@
 <ol><li ng-repeat ="i in ctrl.items track by $index">
     <span ng-hide ="ctrl.editBoolean" ng-bind ="i"></span> 
     <input ng-show = "ctrl.editBoolean" type="text" ng-model=i></input>
-    <button ng-hide = "ctrl.editBoolean" ng-click = "ctrl.deleteButton(i)" >Delete</button>
+    <button ng-hide = "ctrl.editBoolean" ng-click = "ctrl.deleteButton($index)" >Delete</button>
 </li> </ol>
  </div>
 
