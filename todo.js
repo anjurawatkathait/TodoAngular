@@ -18,7 +18,7 @@ function todoFunction(){
         }
 
         this.deleteButton = function(i){
-           this.items.shift(i);
+           this.items.splice(index, 1);
         }
     
 }
